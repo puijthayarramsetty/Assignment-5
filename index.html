@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WishWave</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <style>
+    body {
+      background: linear-gradient(to right, #e0f7fa, #fce4ec);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    h1 {
+      color: #4a148c;
+      font-weight: bold;
+    }
+
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .price-tag {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+
+    .stock-badge {
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 5px;
+    }
+
+    .stock-high {
+      background-color: #d0f0c0;
+      color: #1b5e20;
+    }
+
+    .stock-low {
+      background-color: #fff3cd;
+      color: #ff6f00;
+    }
+
+    .stock-out {
+      background-color: #ffcdd2;
+      color: #b71c1c;
+    }
+
+    #loadMoreBtn {
+      background-color: #6a1b9a;
+      color: white;
+      border-radius: 25px;
+      font-weight: 500;
+    }
+
+    #loadMoreBtn:hover {
+      background-color: #4a148c;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">🛍 Welcome to WishWave</h1>
+
+    <!-- Product Cards -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="box">
+      <!-- Cards will be inserted here by JavaScript -->
+    </div>
+
+    <!-- Load More Button -->
+    <div class="text-center mt-4">
+      <button id="loadMoreBtn" class="btn px-4 py-2">Load More</button>
+    </div>
+  </div>
+
+  <!-- Product Modal -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content rounded-4">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="modalTitle"></h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img id="modalImage" class="img-fluid rounded mb-3" alt="Product Image" />
+          <p id="modalDescription" class="mb-3"></p>
+          <p><strong>Category:</strong> <span id="modalCategory"></span></p>
+          <p><strong>Brand:</strong> <span id="modalBrand"></span></p>
+          <p><strong>Price:</strong> ₹<span id="modalPrice"></span></p>
+          <p><strong>Stock:</strong> <span id="modalStock"></span> units</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Script -->
+  <script src="index1.js"></script>
+</body>
+</html>
